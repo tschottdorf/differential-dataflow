@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["Empty","A type that does not affect total orderedness."],["Lattice","A bounded partially ordered type supporting joins and meets."],["TotalOrder","A carrier trait for totally ordered lattices."]]});

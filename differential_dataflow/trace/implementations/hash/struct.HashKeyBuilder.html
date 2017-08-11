@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `HashKeyBuilder` struct in crate `differential_dataflow`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, HashKeyBuilder">
+
+    <title>differential_dataflow::trace::implementations::hash::HashKeyBuilder - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct HashKeyBuilder</p><div class="block items"><ul><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../../index.html'>differential_dataflow</a>::<wbr><a href='../../index.html'>trace</a>::<wbr><a href='../index.html'>implementations</a>::<wbr><a href='index.html'>hash</a></p><script>window.sidebarCurrent = {name: 'HashKeyBuilder', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>differential_dataflow</a>::<wbr><a href='../../index.html'>trace</a>::<wbr><a href='../index.html'>implementations</a>::<wbr><a href='index.html'>hash</a>::<wbr><a class="struct" href=''>HashKeyBuilder</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/differential_dataflow/trace/implementations/hash.rs.html#280-282' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct HashKeyBuilder&lt;K:&nbsp;<a class="trait" href="../../../../differential_dataflow/hashable/trait.HashOrdered.html" title="trait differential_dataflow::hashable::HashOrdered">HashOrdered</a>, T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html" title="trait core::cmp::Ord">Ord</a> + <a class="trait" href="../../../../differential_dataflow/lattice/trait.Lattice.html" title="trait differential_dataflow::lattice::Lattice">Lattice</a>, R:&nbsp;<a class="trait" href="../../../../differential_dataflow/difference/trait.Diff.html" title="trait differential_dataflow::difference::Diff">Diff</a>&gt; { /* fields omitted */ }</pre><div class='docblock'><p>A builder for creating layers from unsorted update tuples.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;K, T, R&gt; <a class="trait" href="../../../../differential_dataflow/trace/trait.Builder.html" title="trait differential_dataflow::trace::Builder">Builder</a>&lt;K, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, T, R, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;<a class="struct" href="../../../../differential_dataflow/trace/implementations/hash/struct.HashKeyBatch.html" title="struct differential_dataflow::trace::implementations::hash::HashKeyBatch">HashKeyBatch</a>&lt;K, T, R&gt;&gt;&gt; for <a class="struct" href="../../../../differential_dataflow/trace/implementations/hash/struct.HashKeyBuilder.html" title="struct differential_dataflow::trace::implementations::hash::HashKeyBuilder">HashKeyBuilder</a>&lt;K, T, R&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> + <a class="trait" href="../../../../differential_dataflow/hashable/trait.HashOrdered.html" title="trait differential_dataflow::hashable::HashOrdered">HashOrdered</a> + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../../../differential_dataflow/lattice/trait.Lattice.html" title="trait differential_dataflow::lattice::Lattice">Lattice</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html" title="trait core::cmp::Ord">Ord</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;R: <a class="trait" href="../../../../differential_dataflow/difference/trait.Diff.html" title="trait differential_dataflow::difference::Diff">Diff</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/differential_dataflow/trace/implementations/hash.rs.html#284-310' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='../../../../differential_dataflow/trace/trait.Builder.html#tymethod.new' class='fnname'>new</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Allocates an empty builder.</p>
+</div><h4 id='method.with_capacity' class="method"><span id='with_capacity.v' class='invisible'><code>fn <a href='../../../../differential_dataflow/trace/trait.Builder.html#tymethod.with_capacity' class='fnname'>with_capacity</a>(cap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Allocates an empty builder with some capacity.</p>
+</div><h4 id='method.push' class="method"><span id='push.v' class='invisible'><code>fn <a href='../../../../differential_dataflow/trace/trait.Builder.html#tymethod.push' class='fnname'>push</a>(&amp;mut self, (key, _, time, diff): <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>K, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, T, R<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>)</code></span></h4>
+<div class='docblock'><p>Adds an element to the batch.</p>
+</div><h4 id='method.done' class="method"><span id='done.v' class='invisible'><code>fn <a href='../../../../differential_dataflow/trace/trait.Builder.html#tymethod.done' class='fnname'>done</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;lower: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;upper: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;since: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;<a class="struct" href="../../../../differential_dataflow/trace/implementations/hash/struct.HashKeyBatch.html" title="struct differential_dataflow::trace::implementations::hash::HashKeyBatch">HashKeyBatch</a>&lt;K, T, R&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Completes building and returns the batch.</p>
+</div><h4 id='method.extend' class="method"><span id='extend.v' class='invisible'><code>fn <a href='../../../../differential_dataflow/trace/trait.Builder.html#method.extend' class='fnname'>extend</a>&lt;I:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>K, V, T, R<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;&gt;(&amp;mut self, iter: I)</code></span></h4>
+<div class='docblock'><p>Adds an ordered sequence of elements to the batch.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "differential_dataflow";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>
